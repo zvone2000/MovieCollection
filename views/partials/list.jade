@@ -1,0 +1,21 @@
+
+table(align="left", class="table table-bordered")
+	thead
+		tr
+			th Title
+			th Director
+			th Release Year
+			th Added By User
+			th Adding Date/Time (UTC)
+			th Actions allowed
+	tbody
+		tr(ng-repeat='movie in movies')
+			td(align="center") {{movie.title}}
+			td(align="center") {{movie.director}}
+			td(align="center") {{movie.releaseYear}}
+			td(align="center") {{movie.addedByUser}}
+			td(align="center") {{movie.addOnDate}}
+			td(align="center")
+				a(class='btn btn-default', href='/editMovie/{{movie._id}}', role='button') Edit
+				a(class='btn btn-default', href='/deleteMovie/{{movie._id}}', role='button') Delete
+
